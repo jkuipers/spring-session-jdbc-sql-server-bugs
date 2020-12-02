@@ -2,6 +2,8 @@ package nl.trifork.springsessionjdbcsqlserverbugs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
+import org.springframework.session.jdbc.SqlServerJdbcIndexedSessionRepositoryCustomizer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 @SpringBootApplication
+@Import(SqlServerJdbcIndexedSessionRepositoryCustomizer.class)
 public class SpringSessionJdbcSqlServerBugsApplication {
 
 	public static void main(String[] args) {
